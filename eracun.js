@@ -134,7 +134,7 @@ var pesmiIzRacuna = function(racunId, callback) {
     WHERE InvoiceLine.InvoiceId = Invoice.InvoiceId AND Invoice.InvoiceId = " + racunId + ")",
     function(napaka, vrstice) {
       console.log(vrstice);
-    })
+    });
 }
 
 // Vrni podrobnosti o stranki iz računa
