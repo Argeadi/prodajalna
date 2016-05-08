@@ -157,7 +157,9 @@ streznik.post('/izpisiRacunBaza', function(zahteva, odgovor) {
   pesmiIzRacuna(fields.seznamRacunov, function(pesmi){
     strankaIzRacuna(fields.seznamRacunov, function(stranka){
       odgovor.setHeader('content-type', 'text/xml');
-      odgovor.render('eslog', { vizualiziraj:true,   stranka: stranka, postavkeRacuna: pesmi });
+      odgovor.render('eslog', { vizualiziraj:true,  
+                                stranka: stranka, 
+                                postavkeRacuna: pesmi });
     });
   });
   });
