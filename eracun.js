@@ -134,7 +134,6 @@ var pesmiIzRacuna = function(racunId, callback) {
     WHERE InvoiceLine.InvoiceId = Invoice.InvoiceId AND Invoice.InvoiceId = " + racunId + ")",
     function(napaka, vrstice) {
       //console.log(vrstice);
-      //callback(napaka, vrstice);
       callback(vrstice);
     })
 }
@@ -145,7 +144,6 @@ var strankaIzRacuna = function(racunId, callback) {
             WHERE Customer.CustomerId = Invoice.CustomerId AND Invoice.InvoiceId = " + racunId,
     function(napaka, vrstice) {
       //console.log(vrstice);
-      //callback(napaka, vrstice);
       callback(vrstice);
     })
 }
@@ -160,7 +158,6 @@ streznik.post('/izpisiRacunBaza', function(zahteva, odgovor) {
     strankaIzRacuna(fields.seznamRacunov, function(stranka){
       odgovor.setHeader('content-type', 'text/xml');
       odgovor.render('eslog', { vizualiziraj:true,   stranka: stranka, postavkeRacuna: pesmi });
-      
     });
   });
   });
